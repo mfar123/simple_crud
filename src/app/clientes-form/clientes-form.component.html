@@ -1,0 +1,18 @@
+<form class="needs-validation" novalidade [formGroup]="form" style="padding-top: 10px;">
+    <div class="form-row">
+        <div class="col-md-4 mb-3">
+            <label for="validationCustom01">Nome</label>
+            <input type="text" id="validationCustom01" class="form-control" required formControlName="nome"
+            [ngClass]= " {'is-invalid': submitted && hasError('nome')} ">
+            <div class="valid-feedback">Looks good!</div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="validationCustom01">Endereço</label>
+            <input type="text" id="validationCustom01" class="form-control" required formControlName="endereco"
+            [ngClass]= " {'is-invalid': submitted && hasError('nome')} ">
+            <div class="valid-feedback">Looks good!</div>
+        </div>
+    </div >
+    <div class="btn btn-primary" style="margin-top: 10px;" (click)="Submit()"> Salvar </div>
+</form>

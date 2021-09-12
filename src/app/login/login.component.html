@@ -1,0 +1,27 @@
+<div class="container" style="font-size: larger;">
+    <div class="card card-container">
+        <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
+        <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+        <form>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="usuario" class="active">Usuário</label>
+                    <input [(ngModel)]=usuario.nome type="text" id="usuario" class="validate" required autofocus name="nome" value="michael">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12">
+                    <label for="senha" class="active">Senha</label>
+                    <input [(ngModel)]=usuario.senha type="password" id="senha" class="validate" required name="senha" value="marimar">
+                </div>
+            </div>
+
+            <button class="btn waves-effect waves-light" type="submit" name="action" style="margin-left: 70px;" routerLink="home" (click)="fazerLogin(usuario)">Entrar
+                <i class="material-icons right">send</i>
+            </button>
+
+        </form><!-- /form -->
+    </div><!-- /card-container -->
+</div><!-- /container -->

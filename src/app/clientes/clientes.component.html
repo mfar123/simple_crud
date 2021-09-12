@@ -1,0 +1,71 @@
+<div class="card mt-3">
+    <div class="card-header">
+      <div class="float-left">
+      </div>
+      <div class="row align-items-start" >
+          <h2 style="display: inline-flex;" class=" col">Clientes</h2>
+
+          <input class="col-md-9" name="cliente" placeholder="Pesquisar clientes" [(ngModel)]="idBuscado"  [formControl]="queryField"><button class="but btn-lg btn-success col-auto" (click)="buscarId()"  >Search</button>        
+        
+          <button type="button" class="btn btn-primary col" style="margin-left: 900px;" routerLink='/novo'>Novo Cliente</button>
+
+        <button type="button" class="btn btn-secondary col" style="margin-left: 10px;"  (click)="Refresh()">Atualizar</button>
+      </div>
+    </div>
+    <div class="card-body">
+      <table class="table table-hover" *ngIf="clientes$ | async as cursos; else loadingError">
+        <thead>
+          <tr>
+            <th  class="col-sm-3">ID</th>
+            <th  class="col-sm-3">Clientes</th>
+            <th  class="col-sm-3">Endereço</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let cliente of cursos">
+            <td> {{cliente.id}} </td>
+            <td> {{cliente.nome}} </td>
+            <td> {{cliente.endereco}} </td>
+            <td>
+              <span class="float-right">
+                <button class="btn btn-outline-warning mb-1 btn-sm" (click)="Editar(cliente.id)" >
+                  Atualizar
+                </button>
+  
+                <button class="btn btn-outline-danger mb-1 btn-sm" (click)="Excluir(cliente)" >
+                  Remover
+                </button>
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  
+  
+      <ng-template #loadingError>
+        <div *ngIf="error$ | async; else loading">
+            Erro ao carregar clientes
+        </div>
+        <ng-template #loading>          
+            <span>Carregando clientes...</span>
+        </ng-template>
+      </ng-template>
+
+     
+    </div>
+  </div>
+
+ 
+<ng-template #deleteModal>
+  <div class="modal-body text-center">
+    <p>Deseja remover esse cliente?</p>
+    <button type="button" class="btn btn-default" (click)="confirm()" >Sim</button>
+    <button type="button" class="btn btn-primary" (click)="decline()" >Não</button>
+  </div>
+</ng-template>
+
+<ul *ngIf="cli != null">
+  <li>{{cli.id}}</li>
+  <li>{{cli.nome}}</li>
+</ul>

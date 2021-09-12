@@ -1,0 +1,34 @@
+{
+  "clientes": [
+    {
+      "id": 1,
+      "nome": "Gustavo Aldama",
+      "endereco": "Mansão Aldama"
+    },
+    {
+      "id": 2,
+      "nome": "Esperança Aldama",
+      "endereco": "Mansão Aldama"
+    },
+    {
+      "id": 4,
+      "nome": "Bernardo Duarte",
+      "endereco": "Vale Encantado"
+    },
+    {
+      "id": 10,
+      "nome": " Brenda ",
+      "endereco": "Vale Encantado"
+    },
+    {
+      "id": 12,
+      "nome": "Coração Ambulante",
+      "endereco": "Rua Santibanez"
+    },
+    {
+      "id": 15,
+      "nome": "Maria ",
+      "endereco": "San Martin da Costa"
+    }
+  ]
+}
